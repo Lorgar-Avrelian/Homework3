@@ -47,17 +47,17 @@ public class Main {
         byte annaSergeevnaClass = 27;
         byte ekaterinaAndreevnaClass = 30;
         short sheetsOfPaper = 480;
-        int sheetsPerStudent = sheetsOfPaper / (lyudmilaPavlovnaClass + annaSergeevnaClass + ekaterinaAndreevnaClass);
+        byte sheetsPerStudent = (byte) (sheetsOfPaper / (lyudmilaPavlovnaClass + annaSergeevnaClass + ekaterinaAndreevnaClass));
         System.out.println("На каждого ученика рассчитано " + sheetsPerStudent + " листов бумаги");
     }
     public static void task4 () {
         System.out.println("Задача 4");
         byte minutesToBottles = 2;
         byte bottles = 16;
-        int bottlePerMinute = bottles / minutesToBottles;
-        int bottlesPerTwentyMinutes = bottlePerMinute * 20;
+        byte bottlePerMinute = (byte) (bottles / minutesToBottles);
+        short bottlesPerTwentyMinutes = (short) (bottlePerMinute * 20);
         System.out.println("За 20 минут машина произвела " + bottlesPerTwentyMinutes + " штук бутылок");
-        int bottlesPerDay = bottlePerMinute * 60 * 24;
+        short bottlesPerDay = (short) (bottlePerMinute * 60 * 24);
         System.out.println("За сутки машина произвела " + bottlesPerDay + " штук бутылок");
         int bottlesPerThreeDays = bottlesPerDay * 3;
         System.out.println("За трое суток машина произвела " + bottlesPerThreeDays + " штук бутылок");
@@ -69,9 +69,9 @@ public class Main {
         byte canOfPaint = 120;
         byte canOfWhitePaintPerClass = 2;
         byte canOfBrownPaintPerClass = 4;
-        int totalClasses = canOfPaint / (canOfWhitePaintPerClass + canOfBrownPaintPerClass);
-        int totalCanOfWhitePaint = totalClasses * canOfWhitePaintPerClass;
-        int totalCanOfBrownPaint = totalClasses * canOfBrownPaintPerClass;
+        byte totalClasses = (byte) (canOfPaint / (canOfWhitePaintPerClass + canOfBrownPaintPerClass));
+        byte totalCanOfWhitePaint = (byte) (totalClasses * canOfWhitePaintPerClass);
+        byte totalCanOfBrownPaint = (byte) (totalClasses * canOfBrownPaintPerClass);
         System.out.println("В школе, где " + totalClasses + " классов, нужно " + totalCanOfWhitePaint + " банок белой краски и " + totalCanOfBrownPaint + " банок коричневой краски");
     }
     public static void task6 () {
@@ -84,21 +84,22 @@ public class Main {
         byte weightPerOneIceCream = 100;
         byte eggs = 4;
         byte weightPerOneEgg = 70;
-        int totalWeightInGrams = bananas * weightPerOneBanana + milk * weightPer100mlOfMilk / 100 + iceCream * weightPerOneIceCream + eggs * weightPerOneEgg;
+        short totalWeightInGrams = (short) (bananas * weightPerOneBanana + milk * weightPer100mlOfMilk / 100 + iceCream * weightPerOneIceCream + eggs * weightPerOneEgg);
         float totalWeightInKilogram = totalWeightInGrams / 1000f;
         System.out.println("Вес (количество граммов) такого спортзавтрака " + totalWeightInGrams + " г, или " + totalWeightInKilogram + " кг");
     }
     public static void task7 () {
         System.out.println("Задача 7");
-        byte weightOfFat = 7;
+        short weightOfFat = 7000;
         short lowerLimitOfFatDropping = 250;
         short topLimitOfFatDropping = 500;
-        int daysPerLowerLimit = weightOfFat * 1000 / lowerLimitOfFatDropping;
-        int daysPerTopLimit = weightOfFat * 1000 / topLimitOfFatDropping;
-        int mediumDaysForDropping = (daysPerTopLimit + daysPerLowerLimit) / 2;
+        short daysPerLowerLimit = (short) (weightOfFat / lowerLimitOfFatDropping);
+        short daysPerTopLimit = (short) (weightOfFat / topLimitOfFatDropping);
+        short mediumLimitOfFatDropping = (short) ((lowerLimitOfFatDropping + topLimitOfFatDropping) / 2);
+        short mediumDaysOfFatDropping = (short) (weightOfFat / mediumLimitOfFatDropping);
         System.out.println(daysPerLowerLimit + " дней уйдет на похудение, если спортсмен будет терять каждый день по 250 грамм");
         System.out.println(daysPerTopLimit + " дней уйдет на похудение, если каждый день будет худеть на 500 грамм");
-        System.out.println(mediumDaysForDropping + " дней может потребоваться в среднем, чтобы добиться результата похудения");
+        System.out.println(mediumDaysOfFatDropping + " дней может потребоваться в среднем, чтобы добиться результата похудения");
     }
     public static void task8 () {
         System.out.println("Задача 8");
